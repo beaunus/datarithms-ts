@@ -2,6 +2,13 @@
   "defaultSeverity": "error",
   "extends": ["tslint-plugin-prettier", "tslint-config-prettier"],
   "jsRules": {},
-  "rules": { "prettier": true, "no-unused-variable": true, "prefer-const":true },
+  "rules": {
+    "file-name-casing": [true, "camel-case"],
+    "no-unused-variable": true,
+    "prefer-const": true,
+    "no-shadowed-variable": true,
+    "prettier": true,
+    "object-literal-sort-keys": true
+  },
   "rulesDirectory": []
 }
