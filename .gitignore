@@ -27,3 +27,5 @@ install-jdk.sh
 
 dist
 target
+
+**/.sts4-cache
