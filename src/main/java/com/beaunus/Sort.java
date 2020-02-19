@@ -5,32 +5,39 @@ import java.util.Random;
 
 public class Sort {
 
-  public static <T extends Comparable<T>> void quicksort(T[] array) {
-    Random random = new Random();
+  /**
+   * Sort the given array using the quicksort algorithm.
+   * 
+   * @param <T> type of elements
+   * @param array array to be sorted
+   */
+  public static <T extends Comparable<T>> void quicksort(final T[] array) {
+    final Random random = new Random();
     System.out.println(Arrays.toString(array));
     quicksort(array, random, 0, array.length - 1);
     System.out.println(Arrays.toString(array));
   }
 
-  private static <T extends Comparable<T>> void quicksort(T[] array, Random random, int lo,
-      int hi) {
+  private static <T extends Comparable<T>> void quicksort(final T[] array, final Random random,
+      final int lo, final int hi) {
     if (hi <= lo) {
       return;
     }
 
-    int randomIndex = lo + random.nextInt(hi - lo);
+    final int randomIndex = lo + random.nextInt(hi - lo);
     swap(array, lo, randomIndex);
 
-    int p = partition(array, lo, hi);
+    final int p = partition(array, lo, hi);
     quicksort(array, random, lo, p - 1);
     quicksort(array, random, p + 1, hi);
   }
 
-  private static <T extends Comparable<T>> int partition(T[] array, int lo, int hi) {
+  private static <T extends Comparable<T>> int partition(final T[] array, final int lo,
+      final int hi) {
     int i = lo;
     int j = hi + 1;
 
-    T pivot = array[lo];
+    final T pivot = array[lo];
 
     while (true) {
       do {
@@ -52,8 +59,8 @@ public class Sort {
 
   }
 
-  private static void swap(Comparable<?>[] array, int i, int j) {
-    Comparable<?> temp = array[i];
+  private static void swap(final Comparable<?>[] array, final int i, final int j) {
+    final Comparable<?> temp = array[i];
     array[i] = array[j];
     array[j] = temp;
   }
