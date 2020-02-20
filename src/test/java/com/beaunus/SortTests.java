@@ -22,7 +22,7 @@ class SortTests {
         .map(method -> dynamicTest(method.getName(), () -> testSortMethod(method)));
   }
 
-  private static void testSortMethod(final Method method)
+  private void testSortMethod(final Method method)
       throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
     for (int numElements = 1; numElements < 1000; numElements *= 2) {
       final Random random = new Random();

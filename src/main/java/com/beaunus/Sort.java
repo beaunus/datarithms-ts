@@ -13,9 +13,7 @@ public class Sort {
    */
   public static <T extends Comparable<T>> void quicksort(final T[] array) {
     final Random random = new Random();
-    System.out.println(Arrays.toString(array));
     quicksort(array, random, 0, array.length - 1);
-    System.out.println(Arrays.toString(array));
   }
 
   private static <T extends Comparable<T>> void quicksort(final T[] array, final Random random,
