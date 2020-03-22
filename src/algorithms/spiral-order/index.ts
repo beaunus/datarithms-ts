@@ -1,5 +1,7 @@
+export type Matrix = ReadonlyArray<ReadonlyArray<any>>;
+
 export default function spiralOrder(
-  matrix: ReadonlyArray<ReadonlyArray<any>>,
+  matrix: Matrix,
   layer: number = 0
 ): Array<any> {
   if (!matrix[0]) return [];

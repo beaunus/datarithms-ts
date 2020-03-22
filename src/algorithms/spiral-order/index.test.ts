@@ -1,7 +1,5 @@
-import spiralOrder from "./";
+import spiralOrder, { Matrix } from "./";
 import * as _ from "lodash";
-
-type Matrix = ReadonlyArray<ReadonlyArray<any>>;
 
 describe("spiralOrder", () => {
   it("should return an empty array if the given matrix is empty", () => {
