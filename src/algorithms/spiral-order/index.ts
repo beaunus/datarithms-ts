@@ -16,9 +16,9 @@ export default function spiralOrder(
 
   const result = [];
 
-  for (let col = leftColIndex; col <= rightColIndex; ++col)
+  for (let col = leftColIndex; col < rightColIndex; ++col)
     result.push(matrix[topRowIndex][col]);
-  for (let row = topRowIndex + 1; row < bottomRowIndex; ++row)
+  for (let row = topRowIndex; row < bottomRowIndex; ++row)
     result.push(matrix[row][rightColIndex]);
   for (let col = rightColIndex; col > leftColIndex; --col)
     result.push(matrix[bottomRowIndex][col]);
