@@ -1,9 +1,23 @@
-export type Matrix = ReadonlyArray<ReadonlyArray<any>>;
+import { Matrix } from "../..";
 
-export default function spiralOrder(
-  matrix: Matrix,
-  layer: number = 0
-): Array<any> {
+/**
+ * Traverse the given matrix in spiral order.
+ *
+ * @param matrix 2-d array of elements to traverse in spiral order
+ * @param [layer = 0] layer to traverse (0 is outermost layer)
+ *
+ * @example
+ *
+ * ```typescript
+ * // Returns [1,2,3,6,9,8,7,4,5]
+ * spiralOrder([
+ *   [1,2,3],
+ *   [4,5,6],
+ *   [7,8,9]
+ * ])
+ * ```
+ */
+export default function spiralOrder(matrix: Matrix, layer = 0): Array<any> {
   if (!matrix[0]) return [];
 
   const numRows = matrix.length;
