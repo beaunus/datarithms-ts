@@ -2,4 +2,5 @@
 
 - Update docs for existing code.
 - Add `docs` to some git hook?
+- Integrate with Github pages
 
