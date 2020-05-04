@@ -9,13 +9,13 @@ Most data structures and algorithms have corresponding tests.
 To run JavaScript tests:
 
 ```sh
-npm run test
+yarn test
 ```
 
 or 
 
 ```sh
-npm run test -- --watch
+yarn test -- --watch
 ```
 
 To run Java tests:
