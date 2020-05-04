@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc -p .",
     "docs": "typedoc",
-    "lint": "tslint -p . --fix",
+    "lint": "eslint --fix",
     "test": "jest"
   },
   "keywords": [],
@@ -34,7 +34,7 @@
   "dependencies": {},
   "lint-staged": {
     "*.ts": [
-      "eslint --fix"
+      "lint"
     ]
   }
 }
