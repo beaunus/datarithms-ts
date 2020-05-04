@@ -1,0 +1,7 @@
+{
+  "exclude": "**/*+(.test).ts,**/node_modules/**",
+  "includeDeclarations": true,
+  "mode": "modules",
+  "out": "docs/ts",
+  "readme": "none"
+}
