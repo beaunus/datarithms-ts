@@ -1,4 +1,4 @@
-import { Matrix } from "../..";
+import { Matrix } from "../../types";
 
 /**
  * Traverse the given matrix in spiral order.
@@ -17,7 +17,7 @@ import { Matrix } from "../..";
  * ])
  * ```
  */
-export default function spiralOrder(matrix: Matrix, layer = 0): Array<unknown> {
+export default function spiralOrder<T>(matrix: Matrix<T>, layer = 0): Array<T> {
   if (!matrix[0]) return [];
 
   const numRows = matrix.length;

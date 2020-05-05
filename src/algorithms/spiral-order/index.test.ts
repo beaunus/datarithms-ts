@@ -1,11 +1,12 @@
-import spiralOrder, { Matrix } from "./";
 import * as _ from "lodash";
+import { Matrix } from "../../types";
+import spiralOrder from "./";
 
 describe("spiralOrder", () => {
   it("should return an empty array if the given matrix is empty", () => {
-    let matrix: Matrix = [];
+    let matrix: Matrix<unknown> = [];
     let actual = spiralOrder(matrix);
-    const expected: Array<any> = [];
+    const expected: Array<unknown> = [];
 
     expect(actual).toEqual(expected);
 
@@ -16,7 +17,7 @@ describe("spiralOrder", () => {
   });
 
   it("should return the given elements in spiral order", () => {
-    const matrix: Matrix = [
+    const matrix: Matrix<number> = [
       [1, 2, 3, 4],
       [5, 6, 7, 8],
       [9, 10, 11, 12],
