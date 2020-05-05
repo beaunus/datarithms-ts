@@ -1,6 +1,5 @@
 package com.beaunus;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Sort {
@@ -8,7 +7,7 @@ public class Sort {
   /**
    * Sort the given array using the quicksort algorithm.
    * 
-   * @param <T> type of elements
+   * @param <T>   type of elements
    * @param array array to be sorted
    */
   public static <T extends Comparable<T>> void quicksort(final T[] array) {
@@ -16,8 +15,8 @@ public class Sort {
     quicksort(array, random, 0, array.length - 1);
   }
 
-  private static <T extends Comparable<T>> void quicksort(final T[] array, final Random random,
-      final int lo, final int hi) {
+  private static <T extends Comparable<T>> void quicksort(final T[] array, final Random random, final int lo,
+      final int hi) {
     if (hi <= lo) {
       return;
     }
@@ -30,25 +29,23 @@ public class Sort {
     quicksort(array, random, p + 1, hi);
   }
 
-  private static <T extends Comparable<T>> int partition(final T[] array, final int lo,
-      final int hi) {
+  private static <T extends Comparable<T>> int partition(final T[] array, final int lo, final int hi) {
     int i = lo;
     int j = hi + 1;
 
     final T pivot = array[lo];
 
     while (true) {
-      do {
+      do
         ++i;
-      } while (array[i].compareTo(pivot) <= 0 && i < hi);
+      while (array[i].compareTo(pivot) <= 0 && i < hi);
 
-      do {
+      do
         --j;
-      } while (array[j].compareTo(pivot) >= 0 && j > lo);
+      while (array[j].compareTo(pivot) >= 0 && j > lo);
 
-      if (i >= j) {
+      if (i >= j)
         break;
-      }
       swap(array, i, j);
     }
 

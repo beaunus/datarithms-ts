@@ -17,8 +17,7 @@ class SortTests {
   @TestFactory
   Stream<DynamicTest> testSortingMethods() throws ClassNotFoundException {
     final Class<?> c = Class.forName("com.beaunus.Sort");
-    return Arrays.stream(c.getDeclaredMethods())
-        .filter(method -> Modifier.isPublic(method.getModifiers()))
+    return Arrays.stream(c.getDeclaredMethods()).filter(method -> Modifier.isPublic(method.getModifiers()))
         .map(method -> dynamicTest(method.getName(), () -> testSortMethod(method)));
   }
 
@@ -26,15 +25,13 @@ class SortTests {
       throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
     for (int numElements = 1; numElements < 1000; numElements *= 2) {
       final Random random = new Random();
-      final Integer[] array = Arrays.stream(new Integer[numElements])
-          .map(number -> random.nextInt()).toArray(Integer[]::new);
+      final Integer[] array = Arrays.stream(new Integer[numElements]).map(number -> random.nextInt())
+          .toArray(Integer[]::new);
 
-      method.invoke(null, new Object[] {array});
+      method.invoke(null, new Object[] { array });
 
-      for (int i = 1; i < numElements; ++i) {
-        assertTrue(array[i] >= array[i - 1],
-            "Each element should be greater than or equal to its predecessor");
-      }
+      for (int i = 1; i < numElements; ++i)
+        assertTrue(array[i] >= array[i - 1], "Each element should be greater than or equal to its predecessor");
     }
   }
 
