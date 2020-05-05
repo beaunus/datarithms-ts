@@ -23,7 +23,8 @@ export default function spiralOrder<T>(matrix: Matrix<T>, layer = 0): Array<T> {
   const numRows = matrix.length;
   const numCols = matrix[0].length;
 
-  if (layer * 2 >= Math.min(numRows, numCols)) return [];
+  const isLayerTooDeep = layer * 2 >= Math.min(numRows, numCols);
+  if (isLayerTooDeep) return [];
 
   const topRowIndex = layer;
   const rightColIndex = numCols - layer - 1;
@@ -41,7 +42,5 @@ export default function spiralOrder<T>(matrix: Matrix<T>, layer = 0): Array<T> {
   for (let row = bottomRowIndex; row > topRowIndex; --row)
     result.push(matrix[row][layer]);
 
-  result.push(...spiralOrder(matrix, layer + 1));
-
-  return result;
+  return [...result, ...spiralOrder(matrix, layer + 1)];
 }
