@@ -31,10 +31,5 @@
     "typedoc": "^0.17.6",
     "typescript": "^3.8.3"
   },
-  "dependencies": {},
-  "lint-staged": {
-    "*.ts": [
-      "lint"
-    ]
-  }
+  "dependencies": {}
 }
