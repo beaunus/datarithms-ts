@@ -4,7 +4,7 @@ import { Matrix } from "../../types";
  * Traverse the given matrix in spiral order.
  *
  * @param matrix 2-d array of elements to traverse in spiral order
- * @param [layer = 0] layer to traverse (0 is outermost layer)
+ * @param [layer = 0] layer layer to traverse (0 is outermost layer)
  *
  * @example
  *
