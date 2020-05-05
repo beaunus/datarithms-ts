@@ -17,7 +17,7 @@ import { Matrix } from "../..";
  * ])
  * ```
  */
-export default function spiralOrder(matrix: Matrix, layer = 0): Array<any> {
+export default function spiralOrder(matrix: Matrix, layer = 0): Array<unknown> {
   if (!matrix[0]) return [];
 
   const numRows = matrix.length;

@@ -1,5 +1,5 @@
-import DisjointSet from "./";
 import * as _ from "lodash";
+import DisjointSet from "./";
 
 describe("DisjointSet", () => {
   const NUM_ELEMENTS = _.random(10, 20);
@@ -23,7 +23,7 @@ describe("DisjointSet", () => {
       groups.push(newGroup);
     }
 
-    groups.forEach(group => {
+    groups.forEach((group) => {
       for (let i = 1; i < group.length; ++i) {
         const elementToJoin = group[i];
         const randomIndex = _.random(0, i - 1);
@@ -34,13 +34,13 @@ describe("DisjointSet", () => {
 
     const rootsSeenSoFar = new Set();
 
-    groups.forEach(group => {
+    groups.forEach((group) => {
       const thisGroupRoot = disjointSet.find(group[0]);
       expect(rootsSeenSoFar).not.toContain(thisGroupRoot);
       rootsSeenSoFar.add(thisGroupRoot);
       group
         .slice(1)
-        .forEach(element =>
+        .forEach((element) =>
           expect(disjointSet.find(element)).toBe(thisGroupRoot)
         );
     });

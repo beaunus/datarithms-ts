@@ -1,7 +1,17 @@
+/**
+ * A disjoint-set data structure.
+ *
+ * Adapted from https://algs4.cs.princeton.edu/code/
+ */
 export default class DisjointSet {
   private parent: Array<number>;
   private rank: Int8Array;
 
+  /**
+   * Construct an new DisjointSet instance with the given number of elements.
+   *
+   * @param n
+   */
   constructor(n: number) {
     this.parent = new Array(n);
     this.rank = new Int8Array(n);
@@ -11,7 +21,12 @@ export default class DisjointSet {
     }
   }
 
-  find(x: number) {
+  /**
+   * Returns the identifier for the set that the given element belongs to.
+   *
+   * @param x
+   */
+  find(x: number): number {
     let root = x;
     while (this.parent[root] !== root) root = this.parent[root];
 
@@ -24,7 +39,13 @@ export default class DisjointSet {
     return root;
   }
 
-  union(x: number, y: number) {
+  /**
+   * Merges the sets containing the given elements.
+   *
+   * @param x
+   * @param y
+   */
+  union(x: number, y: number): void {
     let rootOfLargerSet = this.find(x);
     let rootOfSmallerSet = this.find(y);
     if (rootOfLargerSet === rootOfSmallerSet) return;
