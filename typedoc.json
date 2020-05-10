@@ -1,5 +1,5 @@
 {
-  "exclude": "**/*+(.test).ts,**/node_modules/**,**/target/**",
+  "exclude": "**/*+(test).ts,**/node_modules/**,**/target/**",
   "includeDeclarations": true,
   "mode": "modules",
   "out": "docs",
