@@ -26,8 +26,7 @@ describe("DisjointSet", () => {
     groups.forEach((group) => {
       for (let i = 1; i < group.length; ++i) {
         const elementToJoin = group[i];
-        const randomIndex = _.random(0, i - 1);
-        const randomOtherElement = group[randomIndex];
+        const randomOtherElement = group[_.random(0, i - 1)];
         disjointSet.union(elementToJoin, randomOtherElement);
       }
     });
