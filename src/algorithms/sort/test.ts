@@ -1,4 +1,4 @@
-import * as Sort from "./";
+import * as Sort from ".";
 import * as _ from "lodash";
 
 describe("Sort", () => {

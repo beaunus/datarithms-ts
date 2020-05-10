@@ -1,5 +1,5 @@
 import * as _ from "lodash";
-import DisjointSet from "./";
+import DisjointSet from ".";
 
 describe("DisjointSet", () => {
   const NUM_ELEMENTS = _.random(10, 20);

@@ -1,6 +1,6 @@
 import * as _ from "lodash";
 import { Matrix } from "../../types";
-import spiralOrder from "./";
+import spiralOrder from ".";
 
 describe("spiralOrder", () => {
   it("should return an empty array if the given matrix is empty", () => {
