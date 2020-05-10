@@ -2,6 +2,6 @@
   "exclude": "**/*+(.test).ts,**/node_modules/**,**/target/**",
   "includeDeclarations": true,
   "mode": "modules",
-  "out": "docs/ts",
+  "out": "docs",
   "readme": "none"
 }
