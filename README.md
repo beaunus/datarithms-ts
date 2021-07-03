@@ -16,7 +16,7 @@ To run JavaScript tests:
 yarn test
 ```
 
-or 
+or
 
 ```sh
 yarn test -- --watch
