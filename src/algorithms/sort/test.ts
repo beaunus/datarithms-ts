@@ -9,9 +9,7 @@ describe("Sort", () => {
   Object.entries(Sort).forEach(([funcName, func]) => {
     describe(funcName, () => {
       it("should return an array containing all the elements of the given array", () => {
-        console.time("sort");
         const actual = func(array.slice());
-        console.timeEnd("sort");
 
         expect(actual).toHaveLength(array.length);
         array.forEach((element) => {
