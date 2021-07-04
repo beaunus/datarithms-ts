@@ -1,5 +1,5 @@
 import * as Sort from ".";
-import * as _ from "lodash";
+import _ from "lodash";
 
 describe("Sort", () => {
   const NUM_ELEMENTS = _.random(5, 10);
