@@ -33,3 +33,33 @@ export function quicksort3Way(
   quicksort3Way(array, gt + 1, hi);
   return array;
 }
+
+export function mergeSort(
+  array: number[],
+  aux = new Array(array.length),
+  lo = 0,
+  hi = array.length - 1
+) {
+  if (hi <= lo) return;
+  const mid = lo + Math.floor((hi - lo) / 2);
+  mergeSort(array, aux, lo, mid);
+  mergeSort(array, aux, mid + 1, hi);
+  merge(array, aux, lo, mid, hi);
+  return array;
+}
+
+function merge(
+  array: number[],
+  aux: number[],
+  lo: number,
+  mid: number,
+  hi: number
+) {
+  for (let i = lo; i <= hi; i++) aux[i] = array[i];
+  let leftIndex = lo;
+  let rightIndex = mid + 1;
+  for (let i = lo; i <= hi; i++)
+    if (leftIndex > mid || aux[rightIndex] < aux[leftIndex])
+      array[i] = aux[rightIndex++];
+    else array[i] = aux[leftIndex++];
+}
