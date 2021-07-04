@@ -39,7 +39,7 @@ export function mergeSort(
   lo = 0,
   hi = array.length - 1
 ) {
-  if (hi <= lo) return;
+  if (hi <= lo) return array;
   const mid = lo + Math.floor((hi - lo) / 2);
   mergeSort(array, aux, lo, mid);
   mergeSort(array, aux, mid + 1, hi);
