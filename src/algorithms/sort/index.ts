@@ -55,9 +55,7 @@ function merge(
   hi: number
 ) {
   for (let i = lo; i <= hi; i++) aux[i] = array[i];
-  let leftIndex = lo;
-  let rightIndex = mid + 1;
-  for (let i = lo; i <= hi; i++)
+  for (let i = lo, leftIndex = lo, rightIndex = mid + 1; i <= hi; i++)
     array[i] =
       leftIndex > mid || (rightIndex <= hi && aux[rightIndex] < aux[leftIndex])
         ? aux[rightIndex++]
