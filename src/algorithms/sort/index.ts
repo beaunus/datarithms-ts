@@ -68,8 +68,13 @@ export function mergeSortBottomUp(array: number[]) {
   for (let len = 1; len < array.length; len *= 2) {
     for (let lo = 0; lo < array.length - len; lo += len + len) {
       let mid = lo + len - 1;
-      let hi = Math.min(lo + len + len - 1, array.length - 1);
-      merge(array, new Array(array.length), lo, mid, hi);
+      merge(
+        array,
+        new Array(array.length),
+        lo,
+        mid,
+        Math.min(lo + len + len - 1, array.length - 1)
+      );
     }
   }
   return array;
