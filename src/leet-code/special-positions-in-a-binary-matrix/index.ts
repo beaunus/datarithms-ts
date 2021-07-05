@@ -7,7 +7,8 @@ export function numSpecial(mat: number[][]): number {
     }
   let res = 0;
   for (let i = 0; i < rows.length; ++i)
-    for (let j = 0; j < cols.length; ++j)
-      if (mat[i][j] && rows[i] === 1 && cols[j] === 1) ++res;
+    if (rows[i] === 1)
+      for (let j = 0; j < cols.length; ++j)
+        if (mat[i][j] && cols[j] === 1) ++res;
   return res;
 }
