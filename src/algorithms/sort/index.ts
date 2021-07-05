@@ -65,12 +65,11 @@ function merge(
 }
 
 export function mergeSortBottomUp(a: number[]) {
-  let n = a.length;
-  for (let len = 1; len < n; len *= 2) {
-    for (let lo = 0; lo < n - len; lo += len + len) {
+  for (let len = 1; len < a.length; len *= 2) {
+    for (let lo = 0; lo < a.length - len; lo += len + len) {
       let mid = lo + len - 1;
-      let hi = Math.min(lo + len + len - 1, n - 1);
-      merge(a, new Array(n), lo, mid, hi);
+      let hi = Math.min(lo + len + len - 1, a.length - 1);
+      merge(a, new Array(a.length), lo, mid, hi);
     }
   }
   return a;
