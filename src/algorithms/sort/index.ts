@@ -58,9 +58,10 @@ function merge(
   let leftIndex = lo;
   let rightIndex = mid + 1;
   for (let i = lo; i <= hi; i++)
-    if (leftIndex > mid || aux[rightIndex] < aux[leftIndex])
-      array[i] = aux[rightIndex++];
-    else array[i] = aux[leftIndex++];
+    array[i] =
+      leftIndex > mid || (rightIndex <= hi && aux[rightIndex] < aux[leftIndex])
+        ? aux[rightIndex++]
+        : aux[leftIndex++];
 }
 
 export function mergeSortBottomUp(a: number[]) {
