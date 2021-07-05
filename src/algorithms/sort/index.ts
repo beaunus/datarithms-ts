@@ -64,13 +64,13 @@ function merge(
         : aux[leftIndex++];
 }
 
-export function mergeSortBottomUp(a: number[]) {
-  for (let len = 1; len < a.length; len *= 2) {
-    for (let lo = 0; lo < a.length - len; lo += len + len) {
+export function mergeSortBottomUp(array: number[]) {
+  for (let len = 1; len < array.length; len *= 2) {
+    for (let lo = 0; lo < array.length - len; lo += len + len) {
       let mid = lo + len - 1;
-      let hi = Math.min(lo + len + len - 1, a.length - 1);
-      merge(a, new Array(a.length), lo, mid, hi);
+      let hi = Math.min(lo + len + len - 1, array.length - 1);
+      merge(array, new Array(array.length), lo, mid, hi);
     }
   }
-  return a;
+  return array;
 }
