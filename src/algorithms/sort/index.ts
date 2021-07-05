@@ -16,9 +16,8 @@ export function quicksort3Way(
 
   let lt = lo;
   let gt = hi;
-  const pivot = array[lo];
 
-  for (let i = lo + 1; i <= gt; )
+  for (let i = lo + 1, pivot = array[lo]; i <= gt; )
     if (array[i] < pivot) {
       [array[i], array[lt]] = [array[lt], array[i]];
       ++i;
