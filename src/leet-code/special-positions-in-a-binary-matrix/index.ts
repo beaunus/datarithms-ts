@@ -5,10 +5,10 @@ export function numSpecial(matrix: number[][]): number {
     for (let j = 0; j < numOnesByColIndex.length; ++j) {
       if (matrix[i][j]) ++numOnesByRowIndex[i], ++numOnesByColIndex[j];
     }
-  let res = 0;
+  let result = 0;
   for (let i = 0; i < numOnesByRowIndex.length; ++i)
     if (numOnesByRowIndex[i] === 1)
       for (let j = 0; j < numOnesByColIndex.length; ++j)
-        if (matrix[i][j] && numOnesByColIndex[j] === 1) ++res;
-  return res;
+        if (matrix[i][j] && numOnesByColIndex[j] === 1) ++result;
+  return result;
 }
