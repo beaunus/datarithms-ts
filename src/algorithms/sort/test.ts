@@ -2,7 +2,7 @@ import * as Sort from ".";
 import _ from "lodash";
 
 describe("Sort", () => {
-  const NUM_ELEMENTS = _.random(5, 10);
+  const NUM_ELEMENTS = _.random(50, 100);
   const array = Array.from({ length: NUM_ELEMENTS }, () => Math.random());
   Object.freeze(array);
 
