@@ -1,14 +1,14 @@
 export function numSpecial(mat: number[][]): number {
-  const rows = Array(mat.length).fill(0);
-  const cols = Array(mat[0].length).fill(0);
-  for (let i = 0; i < rows.length; ++i)
-    for (let j = 0; j < cols.length; ++j) {
-      if (mat[i][j]) ++rows[i], ++cols[j];
+  const numOnesByRowIndex = Array(mat.length).fill(0);
+  const numOnesByColIndex = Array(mat[0].length).fill(0);
+  for (let i = 0; i < numOnesByRowIndex.length; ++i)
+    for (let j = 0; j < numOnesByColIndex.length; ++j) {
+      if (mat[i][j]) ++numOnesByRowIndex[i], ++numOnesByColIndex[j];
     }
   let res = 0;
-  for (let i = 0; i < rows.length; ++i)
-    if (rows[i] === 1)
-      for (let j = 0; j < cols.length; ++j)
-        if (mat[i][j] && cols[j] === 1) ++res;
+  for (let i = 0; i < numOnesByRowIndex.length; ++i)
+    if (numOnesByRowIndex[i] === 1)
+      for (let j = 0; j < numOnesByColIndex.length; ++j)
+        if (mat[i][j] && numOnesByColIndex[j] === 1) ++res;
   return res;
 }
