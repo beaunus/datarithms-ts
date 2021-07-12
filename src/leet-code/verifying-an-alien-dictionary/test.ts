@@ -11,5 +11,8 @@ describe("verifying-an-alien-dictionary", () => {
     expect(isAlienSorted(["apple", "app"], "abcdefghijklmnopqrstuvwxyz")).toBe(
       false
     );
+    expect(isAlienSorted(["app", "apple"], "abcdefghijklmnopqrstuvwxyz")).toBe(
+      true
+    );
   });
 });
