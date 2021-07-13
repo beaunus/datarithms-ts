@@ -5,6 +5,7 @@ const TEST_CASES: { args: [string, string]; expected: any }[] = [
   { args: ["aaaaa", "bba"], expected: -1 },
   { args: ["", ""], expected: 0 },
   { args: ["", "a"], expected: -1 },
+  { args: ["hello", "participate in parachute "], expected: -1 },
 ];
 
 describe("implement-strstr", () => {
