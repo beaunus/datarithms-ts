@@ -1,5 +1,6 @@
-import * as Sort from ".";
 import _ from "lodash";
+
+import * as Sort from ".";
 
 describe("Sort", () => {
   const NUM_ELEMENTS = _.random(50, 100);
@@ -7,6 +8,7 @@ describe("Sort", () => {
   Object.freeze(array);
 
   Object.entries(Sort).forEach(([funcName, func]) => {
+    // eslint-disable-next-line jest/valid-title
     describe(funcName, () => {
       it("should return an array containing all the elements of the given array", () => {
         const actual = func(array.slice());

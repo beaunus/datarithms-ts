@@ -1,5 +1,7 @@
 import * as _ from "lodash";
+
 import { Matrix } from "../../types";
+
 import spiralOrder from ".";
 
 describe("spiralOrder", () => {

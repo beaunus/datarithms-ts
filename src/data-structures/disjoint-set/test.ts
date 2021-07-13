@@ -1,4 +1,5 @@
 import * as _ from "lodash";
+
 import DisjointSet from ".";
 
 describe("DisjointSet", () => {
