@@ -1,18 +1,16 @@
 function strStr(haystack: string, needle: string): number {
-  const m = haystack.length;
-  const n = needle.length;
-  if (!n) {
+  if (!needle.length) {
     return 0;
   }
   const lps = kmpProcess(needle);
-  for (let i = 0, j = 0; i < m; ) {
+  for (let i = 0, j = 0; i < haystack.length; ) {
     if (haystack[i] == needle[j]) {
       i++, j++;
     }
-    if (j == n) {
+    if (j == needle.length) {
       return i - j;
     }
-    if (i < m && haystack[i] != needle[j]) {
+    if (i < haystack.length && haystack[i] != needle[j]) {
       j ? (j = lps[j - 1]) : i++;
     }
   }
