@@ -4,7 +4,7 @@ function strStr(haystack: string, needle: string): number {
   for (let i = 0, j = 0; i < haystack.length; ) {
     if (haystack[i] === needle[j]) i++, j++;
     if (j === needle.length) return i - j;
-    if (i < haystack.length && haystack[i] != needle[j])
+    if (i < haystack.length && haystack[i] !== needle[j])
       j ? (j = lps[j - 1]) : i++;
   }
   return -1;
