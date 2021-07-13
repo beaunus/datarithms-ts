@@ -12,4 +12,9 @@ describe("implement-strstr", () => {
     it(`should return ${expected} for ${args.join(", ")}`, () =>
       expect(strStr.apply(null, args)).toBe(expected))
   );
+  it("should return the correct result for long strings", () => {
+    const haystack = Array(100000).fill("a").concat(["b"]).join("");
+    const needle = Array(10000).fill("a").concat(["b"]).join("");
+    expect(strStr(haystack, needle)).toBe(haystack.length - needle.length);
+  });
 });
