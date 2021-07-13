@@ -6,6 +6,7 @@ describe("DisjointSet", () => {
   const NUM_ELEMENTS = _.random(10, 20);
   let disjointSet: DisjointSet;
 
+  // eslint-disable-next-line jest/no-hooks
   beforeEach(() => {
     disjointSet = new DisjointSet(NUM_ELEMENTS);
   });

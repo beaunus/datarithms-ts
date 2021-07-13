@@ -1,5 +1,3 @@
-import * as _ from "lodash";
-
 import { Matrix } from "../../types";
 
 import spiralOrder from ".";
@@ -10,12 +8,12 @@ describe("spiralOrder", () => {
     let actual = spiralOrder(matrix);
     const expected: Array<unknown> = [];
 
-    expect(actual).toEqual(expected);
+    expect(actual).toStrictEqual(expected);
 
     matrix = [[]];
     actual = spiralOrder(matrix);
 
-    expect(actual).toEqual(expected);
+    expect(actual).toStrictEqual(expected);
   });
 
   it("should return the given elements in spiral order", () => {
@@ -27,6 +25,6 @@ describe("spiralOrder", () => {
     const actual = spiralOrder(matrix);
     const expected = [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7];
 
-    expect(actual).toEqual(expected);
+    expect(actual).toStrictEqual(expected);
   });
 });

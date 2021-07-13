@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 function strStr(S: string, W: string): number {
   if (!W.length) return 0;
   const T = kmpProcess(W);

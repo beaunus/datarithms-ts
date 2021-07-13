@@ -1,6 +1,6 @@
 import { strStr } from "./index";
 
-const TEST_CASES: { args: [string, string]; expected: any }[] = [
+const TEST_CASES: { args: [string, string]; expected: unknown }[] = [
   { args: ["hello", "ll"], expected: 2 },
   { args: ["aaaaa", "bba"], expected: -1 },
   { args: ["", ""], expected: 0 },

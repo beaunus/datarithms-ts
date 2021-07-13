@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention, sort-keys */
 const valueByNumeral: Record<string, number> = {
   I: 1,
   V: 5,
@@ -7,6 +8,7 @@ const valueByNumeral: Record<string, number> = {
   D: 500,
   M: 1000,
 };
+/* eslint-enable @typescript-eslint/naming-convention, sort-keys */
 
 function romanToInt(s: string): number {
   let result = 0;

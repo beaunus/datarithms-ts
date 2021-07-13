@@ -4,8 +4,8 @@
  * Adapted from https://algs4.cs.princeton.edu/code/
  */
 export default class DisjointSet {
-  private parent: Array<number>;
-  private rank: Int8Array;
+  private _parent: Array<number>;
+  private _rank: Int8Array;
 
   /**
    * Construct an new DisjointSet instance with the given number of elements.
@@ -13,11 +13,11 @@ export default class DisjointSet {
    * @param n
    */
   constructor(n: number) {
-    this.parent = new Array(n);
-    this.rank = new Int8Array(n);
+    this._parent = new Array(n);
+    this._rank = new Int8Array(n);
     for (let i = 0; i < n; ++i) {
-      this.parent[i] = i;
-      this.rank[i] = 0;
+      this._parent[i] = i;
+      this._rank[i] = 0;
     }
   }
 
@@ -28,11 +28,12 @@ export default class DisjointSet {
    */
   find(x: number): number {
     let root = x;
-    while (this.parent[root] !== root) root = this.parent[root];
+    while (this._parent[root] !== root) root = this._parent[root];
 
-    while (this.parent[x] !== root) {
-      const parent = this.parent[x];
-      this.parent[x] = root;
+    while (this._parent[x] !== root) {
+      const parent = this._parent[x];
+      this._parent[x] = root;
+      // eslint-disable-next-line no-param-reassign
       x = parent;
     }
 
@@ -50,14 +51,14 @@ export default class DisjointSet {
     let rootOfSmallerSet = this.find(y);
     if (rootOfLargerSet === rootOfSmallerSet) return;
 
-    if (this.rank[rootOfLargerSet] < this.rank[rootOfSmallerSet]) {
+    if (this._rank[rootOfLargerSet] < this._rank[rootOfSmallerSet]) {
       const temp = rootOfLargerSet;
       rootOfLargerSet = rootOfSmallerSet;
       rootOfSmallerSet = temp;
     }
 
-    this.parent[rootOfSmallerSet] = rootOfLargerSet;
-    if (this.rank[rootOfLargerSet] === this.rank[rootOfSmallerSet])
-      ++this.rank[rootOfLargerSet];
+    this._parent[rootOfSmallerSet] = rootOfLargerSet;
+    if (this._rank[rootOfLargerSet] === this._rank[rootOfSmallerSet])
+      ++this._rank[rootOfLargerSet];
   }
 }

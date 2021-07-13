@@ -5,6 +5,7 @@
  *
  * @param array
  */
+/* eslint-disable no-param-reassign */
 export function quicksort3Way(
   array: Array<number>,
   lo = 0,
@@ -31,6 +32,7 @@ export function quicksort3Way(
   quicksort3Way(array, gt + 1, hi);
   return array;
 }
+/* eslint-enable no-param-reassign */
 
 export function mergeSort(
   array: number[],
@@ -46,6 +48,7 @@ export function mergeSort(
   return array;
 }
 
+/* eslint-disable no-param-reassign */
 function merge(
   array: number[],
   aux: number[],
@@ -60,6 +63,7 @@ function merge(
         ? aux[rightIndex++]
         : aux[leftIndex++];
 }
+/* eslint-enable no-param-reassign */
 
 export function mergeSortBottomUp(array: number[]) {
   const aux = new Array(array.length);
